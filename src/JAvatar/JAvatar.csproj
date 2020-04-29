@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>1.3.2</Version>
+    <Authors>Jeff Mattson</Authors>
+    <Company>Software Engineering Institute</Company>
+    <Copyright>Copyright 2020 Carnegie Mellon University.</Copyright>
+    <PackageId>JAvatar</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/cmu-sei/JAvatar</RepositoryUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="1.0.0-beta0007" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="JAvatars.png" />
+  </ItemGroup>
+</Project>
