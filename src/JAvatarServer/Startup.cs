@@ -73,6 +73,9 @@ namespace JAvatarServer
             if (!string.IsNullOrEmpty(_options.Header.Forwarding.TargetHeaders))
                 app.UseForwardedHeaders();
 
+            if (!string.IsNullOrEmpty(_options.PathBase))
+                app.UsePathBase(_options.PathBase);
+
             app.UseRouting();
 
             app.UseCors(_options.Header.Cors.Name);

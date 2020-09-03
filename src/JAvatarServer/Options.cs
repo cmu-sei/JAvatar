@@ -7,6 +7,7 @@ namespace JAvatarServer
 {
     public class Options
     {
+        public string PathBase { get; set; }
         public AuthorizationOptions OpenIdConnect { get; set; } = new AuthorizationOptions();
         public JAvatar.Options JAvatar { get; set; } = new JAvatar.Options();
         public HeaderOptions Header { get; set; } = new HeaderOptions();

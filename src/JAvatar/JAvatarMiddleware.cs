@@ -163,7 +163,7 @@ namespace JAvatar
                         .Where(x => x.Contains(term))
                         .Skip(skip)
                         .Take((take > 0) ?take : list.Length)
-                        .Select(x => $"{request.Scheme}://{request.Host}/{_options.RoutePrefix}/{target}/{x}")
+                        .Select(x => $"{request.Scheme}://{request.Host}{request.PathBase}/{_options.RoutePrefix}/{target}/{x}")
                     )
                 );
             } else {
@@ -229,7 +229,7 @@ namespace JAvatar
                         _logger.LogInformation($"javatar {folderOptions.Name}/{fn} uploaded by {sub}");
 
                         string path = $"/{_options.RoutePrefix}/{folderOptions.Name}/{fn}";
-                        string url = $"{request.Scheme}://{request.Host}{path}";
+                        string url = $"{request.Scheme}://{request.Host}{request.PathBase}{path}";
 
                         _cache.Set(path, DateTime.UtcNow.Ticks.ToString("x"));
                         _cache.Remove(folder); //TODO: optimize typeahead cache
